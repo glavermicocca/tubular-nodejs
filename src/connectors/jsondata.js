@@ -52,55 +52,54 @@ function applyFreeTextSearch(request, subset) {
 function applyFiltering(request, subset) {
     // Filter by columns
     let filteredColumns = request.columns.filter((column) =>
-        column.filter &&
-        (column.filter.text || column.filter.argument) &&
-        column.filter &&
-        column.filter.operator != CompareOperators.None);
+        column.filterable &&
+        (column.filterText != undefined) &&
+        column.filterOperator != CompareOperators.None);
 
     filteredColumns.forEach(filterableColumn => {
 
-        request.columns.find(column => column.name == filterableColumn.name).hasFilter = true;
+        //request.columns.find(column => column.name == filterableColumn.name).hasFilter = true;
 
-        switch (filterableColumn.filter.operator) {
+        switch (filterableColumn.filterOperator) {
             case CompareOperators.Equals:
-                subset = subset.filter(row => row[filterableColumn.name] == filterableColumn.filter.text);
+                subset = subset.filter(row => row[filterableColumn.name] == filterableColumn.filterText);
                 break;
             case CompareOperators.NotEquals:
-                subset = subset.filter(row => row[filterableColumn.name] != filterableColumn.filter.text);
+                subset = subset.filter(row => row[filterableColumn.name] != filterableColumn.filterText);
                 break;
             case CompareOperators.Contains:
-                subset = subset.filter(row => row[filterableColumn.name].indexOf(filterableColumn.filter.text) >= 0);
+                subset = subset.filter(row => row[filterableColumn.name].indexOf(filterableColumn.filterText) >= 0);
                 break;
             case CompareOperators.NotContains:
-                subset = subset.filter(row => row[filterableColumn.name].indexOf(filterableColumn.filter.text) < 0);
+                subset = subset.filter(row => row[filterableColumn.name].indexOf(filterableColumn.filterText) < 0);
                 break;
             case CompareOperators.StartsWith:
-                subset = subset.filter(row => row[filterableColumn.name].toLowerCase().startsWith(filterableColumn.filter.text));
+                subset = subset.filter(row => row[filterableColumn.name].toLowerCase().startsWith(filterableColumn.filterText));
                 break;
             case CompareOperators.NotStartsWith:
-                subset = subset.filter(row => !row[filterableColumn.name].toLowerCase().startsWith(filterableColumn.filter.text));
+                subset = subset.filter(row => !row[filterableColumn.name].toLowerCase().startsWith(filterableColumn.filterText));
                 break;
             case CompareOperators.EndsWith:
-                subset = subset.filter(row => row[filterableColumn.name].toLowerCase().endsWith(filterableColumn.filter.text));
+                subset = subset.filter(row => row[filterableColumn.name].toLowerCase().endsWith(filterableColumn.filterText));
                 break;
             case CompareOperators.NotEndsWith:
-                subset = subset.filter(row => !row[filterableColumn.name].toLowerCase().endsWith(filterableColumn.filter.text));
+                subset = subset.filter(row => !row[filterableColumn.name].toLowerCase().endsWith(filterableColumn.filterText));
                 break;
             // TODO: check for types
             case CompareOperators.Gt:
-                subset = subset.filter(row => row[filterableColumn.name] > filterableColumn.filter.text);
+                subset = subset.filter(row => row[filterableColumn.name] > filterableColumn.filterText);
                 break;
             case CompareOperators.Gte:
-                subset = subset.filter(row => row[filterableColumn.name] >= filterableColumn.filter.text);
+                subset = subset.filter(row => row[filterableColumn.name] >= filterableColumn.filterText);
                 break;
             case CompareOperators.Lt:
-                subset = subset.filter(row => row[filterableColumn.name] < filterableColumn.filter.text);
+                subset = subset.filter(row => row[filterableColumn.name] < filterableColumn.filterText);
                 break;
             case CompareOperators.Lte:
-                subset = subset.filter(row => row[filterableColumn.name] <= filterableColumn.filter.text);
+                subset = subset.filter(row => row[filterableColumn.name] <= filterableColumn.filterText);
                 break;
             case CompareOperators.Between:
-                subset = subset.filter(row => row[filterableColumn.name] > filterableColumn.filter.text && row[filterableColumn.name] < filterableColumn.filter.argument[0]);
+                subset = subset.filter(row => row[filterableColumn.name] > filterableColumn.filterText && row[filterableColumn.name] < filterableColumn.filter.argument[0]);
                 break;
             default:
                 throw 'Unsupported Compare Operator';
