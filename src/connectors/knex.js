@@ -20,18 +20,19 @@ function getCompareOperators(operator) {
 }
 
 function createGridResponse(request, subset) {
+    
     let promises = [
-        subset.clone().clearSelect()
-            .count(`${request.columns[0].name} as tbResult`)
+        subset.clone().clear('select').clear('order').clear('group').clear('where').clear('having')
+            .count(`* as tbResult`)
             .then(result => ({ totalRecordCount: result[0].tbResult }))
     ];
 
-    subset = applyFreeTextSearch(request, subset);
+    //subset = applyFreeTextSearch(request, subset);
     subset = applyFiltering(request, subset);
     subset = applySorting(request, subset);
 
-    promises.push(subset.clone().clearSelect()
-        .count(`${request.columns[0].name} as tbResult`)
+    promises.push(subset.clone().clear('select').clear('order').clear('group').clear('where').clear('having')
+        .count(`* as tbResult`)
         .then(result => ({ filteredRecordCount: result[0].tbResult })));
 
     let subsetForAggregates = subset.clone();
@@ -152,46 +153,46 @@ function applyFreeTextSearch(request, subset) {
 function applyFiltering(request, subset) {
     // Filter by columns
     let filteredColumns = request.columns.filter((column) =>
-        (column.filter &&
-        (column.filter.text || column.filter.argument) &&
-        column.filter.operator != CompareOperators.None));
+        column.filterable &&
+        (column.filterText != undefined) &&
+        column.filterOperator != CompareOperators.None);
 
     filteredColumns.forEach(filterableColumn => {
         request.columns.find(column => column.name == filterableColumn.name).HasFilter = true;
 
-        switch (filterableColumn.filter.operator) {
+        switch (filterableColumn.filterOperator) {
             case CompareOperators.Equals:
-                subset = subset.where(filterableColumn.name, filterableColumn.filter.text);
+                subset = subset.where(filterableColumn.name, filterableColumn.filterText);
                 break;
             case CompareOperators.NotEquals:
-                subset = subset.whereNot(filterableColumn.name, filterableColumn.filter.text);
+                subset = subset.whereNot(filterableColumn.name, filterableColumn.filterText);
                 break;
             case CompareOperators.Contains:
-                subset = subset.where(filterableColumn.name, 'LIKE', `%${filterableColumn.filter.text}%`);
+                subset = subset.where(filterableColumn.name, 'LIKE', `%${filterableColumn.filterText}%`);
                 break;
             case CompareOperators.NotContains:
-                subset = subset.whereNot(filterableColumn.name, 'LIKE', `%${filterableColumn.filter.text}%`);
+                subset = subset.whereNot(filterableColumn.name, 'LIKE', `%${filterableColumn.filterText}%`);
                 break;
             case CompareOperators.StartsWith:
-                subset = subset.where(filterableColumn.name, 'LIKE', `${filterableColumn.filter.text}%`);
+                subset = subset.where(filterableColumn.name, 'LIKE', `${filterableColumn.filterText}%`);
                 break;
             case CompareOperators.NotStartsWith:
-                subset = subset.whereNot(filterableColumn.name, 'LIKE', `${filterableColumn.filter.text}%`);
+                subset = subset.whereNot(filterableColumn.name, 'LIKE', `${filterableColumn.filterText}%`);
                 break;
             case CompareOperators.EndsWith:
-                subset = subset.where(filterableColumn.name, 'LIKE', `%${filterableColumn.filter.text}`);
+                subset = subset.where(filterableColumn.name, 'LIKE', `%${filterableColumn.filterText}`);
                 break;
             case CompareOperators.NotEndsWith:
-                subset = subset.whereNot(filterableColumn.name, 'LIKE', `%${filterableColumn.filter.text}`);
+                subset = subset.whereNot(filterableColumn.name, 'LIKE', `%${filterableColumn.filterText}`);
                 break;
             case CompareOperators.Gt:
             case CompareOperators.Gte:
             case CompareOperators.Lt:
             case CompareOperators.Lte:
-                subset = subset.where(filterableColumn.name, getCompareOperators(filterableColumn.filter.operator), filterableColumn.filter.text);
+                subset = subset.where(filterableColumn.name, getCompareOperators(filterableColumn.filterOperator), filterableColumn.filterText);
                 break;
             case CompareOperators.Between:
-                subset = subset.whereBetween(filterableColumn.name, [filterableColumn.filter.text, filterableColumn.filter.argument[0]]);
+                subset = subset.whereBetween(filterableColumn.name, [filterableColumn.filterText, filterableColumn.filter.argument[0]]);
                 break;
             default:
                 throw 'Unsupported Compare Operator';
