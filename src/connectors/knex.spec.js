@@ -13,7 +13,7 @@ var knex = require('knex')({
     }
 });
 
-var totalRecordCount = 599;
+var TotalRecordCount = 599;
 
 describe("knex connector", function () {
     afterAll((done) => {
@@ -49,11 +49,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
                     done();
                 });
         });
@@ -80,11 +80,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
                     done();
                 });
         });
@@ -117,11 +117,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(1);
                     done();
                 });
         });
@@ -162,11 +162,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(1);
                     done();
                 });
         });
@@ -199,11 +199,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(1);
                     done();
                 });
         });
@@ -234,11 +234,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
                     done();
                 });
         });
@@ -269,11 +269,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(filteredCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(filteredCount);
                     done();
                 });
         });
@@ -305,11 +305,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
                     done();
                 });
         });
@@ -340,11 +340,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(filteredCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(filteredCount);
                     done();
                 });
         });
@@ -376,11 +376,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
                     done();
                 });
         });
@@ -411,11 +411,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(filteredCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(filteredCount);
                     done();
                 });
         });
@@ -446,11 +446,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
                     done();
                 });
         });
@@ -481,11 +481,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(filteredCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(filteredCount);
                     done();
                 });
         });
@@ -516,11 +516,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(filteredCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(filteredCount);
                     done();
                 });
         });
@@ -551,11 +551,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(filteredCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(filteredCount);
                     done();
                 });
         });
@@ -586,11 +586,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(filteredCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(filteredCount);
                     done();
                 });
         });
@@ -621,11 +621,11 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(10);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(10);
                     done();
                 });
         });
@@ -662,7 +662,7 @@ describe("knex connector", function () {
             const skip = 0,
                 take = 10,
                 filteredCount = 599,
-                totalRecordCount = 599;
+                TotalRecordCount = 599;
 
             let queryBuilder = knex.select('first_name', 'last_name', 'address_id').from('customer');
 
@@ -685,12 +685,12 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.payload[0][0]).toBe('AARON');
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.Payload[0][0]).toBe('AARON');
                     done();
                 });
         });
@@ -698,7 +698,7 @@ describe("knex connector", function () {
         it(" sorts by specific column", done => {
             const take = 10,
                 filteredCount = 599,
-                totalRecordCount = 599;
+                TotalRecordCount = 599;
 
             let queryBuilder = knex.select('first_name', 'last_name', 'address_id').from('customer');
 
@@ -720,12 +720,12 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.payload[0][1]).toBe('ABNEY');
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.Payload[0][1]).toBe('ABNEY');
                     done();
                 });
         });
@@ -733,7 +733,7 @@ describe("knex connector", function () {
         it(" sorts by TWO columns", done => {
             const take = 10,
                 filteredCount = 599,
-                totalRecordCount = 599;
+                TotalRecordCount = 599;
 
             let queryBuilder = knex.select('first_name', 'last_name', 'active').from('customer');
 
@@ -756,13 +756,13 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.payload[0][2]).toBe(0);
-                    expect(response.payload[0][1]).toBe('ARCE');
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.Payload[0][2]).toBe(0);
+                    expect(response.Payload[0][1]).toBe('ARCE');
                     done();
                 });
         });
@@ -772,7 +772,7 @@ describe("knex connector", function () {
 
         it("uses Count", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -794,13 +794,13 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.first_name).toBe(totalRecordCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.first_name).toBe(TotalRecordCount);
 
                     done();
                 });
@@ -808,7 +808,7 @@ describe("knex connector", function () {
 
         it("uses Distinct Count", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest([
                 {
@@ -830,13 +830,13 @@ describe("knex connector", function () {
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
 
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.active).toBe(2);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.active).toBe(2);
 
                     done();
                 });
@@ -844,7 +844,7 @@ describe("knex connector", function () {
 
         it("uses Max", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -866,13 +866,13 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.address_id).toBe(605);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.address_id).toBe(605);
 
                     done();
                 });
@@ -880,7 +880,7 @@ describe("knex connector", function () {
 
         it("uses Min", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -902,13 +902,13 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.address_id).toBe(5);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.address_id).toBe(5);
 
                     done();
                 });
@@ -916,7 +916,7 @@ describe("knex connector", function () {
 
         it("uses Average", done => {
             const take = 10;
-            filteredCount = totalRecordCount;
+            filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -941,13 +941,13 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(Math.round(response.aggregationPayload.customer_id)).toBe(300);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(Math.round(response.AggregationPayload.customer_id)).toBe(300);
 
                     done();
                 });
@@ -955,7 +955,7 @@ describe("knex connector", function () {
 
         it("uses Sum", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest([
                 {
@@ -976,13 +976,13 @@ describe("knex connector", function () {
 
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.address_id).toBe(182530);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.address_id).toBe(182530);
 
                     done();
                 });
@@ -1015,7 +1015,7 @@ describe("knex connector", function () {
         it(" aggregate on one column", done => {
             const take = 10,
                 filteredCount = 32,
-                totalRecordCount = 16049;
+                TotalRecordCount = 16049;
 
             let queryBuilder = knex.select('customer_id', 'amount', 'payment_id').from('payment');
 
@@ -1045,13 +1045,13 @@ describe("knex connector", function () {
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
 
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.amount).toBeGreaterThan(0);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.amount).toBeGreaterThan(0);
 
                     done();
                 });
@@ -1060,7 +1060,7 @@ describe("knex connector", function () {
         it(" aggregate on two columns", done => {
             const take = 10,
                 filteredCount = 32,
-                totalRecordCount = 16049;
+                TotalRecordCount = 16049;
 
             let queryBuilder = knex.select('customer_id', 'amount', 'payment_id').from('payment');
 
@@ -1089,14 +1089,14 @@ describe("knex connector", function () {
             tubular.createGridResponse(request, queryBuilder)
                 .then(response => {
 
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.amount).toBeGreaterThan(0);
-                    expect(response.aggregationPayload.payment_id).toBeGreaterThan(0);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.amount).toBeGreaterThan(0);
+                    expect(response.AggregationPayload.payment_id).toBeGreaterThan(0);
 
                     done();
                 });

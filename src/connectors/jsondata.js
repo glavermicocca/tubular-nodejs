@@ -5,32 +5,32 @@ var { ColumnSortDirection } = require('tubular-common');
 var { GridResponse } = require('tubular-common');
 
 function createGridResponse(request, subset) {
-    let response = new GridResponse(request.counter);
-    response.totalRecordCount = subset.length;
-    response.currentPage = 1;
+    let response = new GridResponse(request.Counter);
+    response.TotalRecordCount = subset.length;
+    response.CurrentPage = 1;
 
     subset = applyFreeTextSearch(request, subset);
     subset = applyFiltering(request, subset);
     subset = applySorting(request, subset);
 
-    response.filteredRecordCount = subset.length;
+    response.FilteredRecordCount = Number(subset.length);
 
     let offset = request.skip;
     let limit = request.take;
 
     // Take with value -1 represents entire set
     if (request.take > -1) {
-        response.totalPages = Math.ceil(response.filteredRecordCount / request.take);
+        response.TotalPages = Math.ceil(response.FilteredRecordCount / request.take);
 
-        if (response.totalPages > 0) {
-            response.currentPage = request.skip / request.take + 1;
+        if (response.TotalPages > 0) {
+            response.CurrentPage = request.skip / request.take + 1;
         }
     }
 
-    response.aggregationPayload = getAggregatePayload(request, subset);
+    response.AggregationPayload = getAggregatePayload(request, subset);
 
     subset = _.slice(subset, offset, offset + limit);
-    response.payload = subset.map(row => request.columns.map(c => row[c.name]));
+    response.Payload = subset.map(row => request.columns.map(c => row[c.name]));
 
     return Promise.resolve(response);
 }

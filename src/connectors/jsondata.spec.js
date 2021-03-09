@@ -3,7 +3,7 @@ var data = require('../../spec/data/jsondata.json');
 var { GridRequest } = require('tubular-common');
 var { CompareOperators } = require('tubular-common');
 
-var totalRecordCount = 50;
+var TotalRecordCount = 50;
 
 describe("jsondata connector", function () {
 
@@ -30,11 +30,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
                     done();
                 });
         });
@@ -59,11 +59,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(filteredCount);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(filteredCount);
                     done();
                 });
         });
@@ -93,11 +93,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(1);
                     done();
                 });
         });
@@ -135,11 +135,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(1);
                     done();
                 });
         });
@@ -170,11 +170,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(1);
                     done();
                 });
         });
@@ -203,11 +203,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(10);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(10);
                     done();
                 });
         });
@@ -236,11 +236,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(2);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(2);
                     done();
                 });
         });
@@ -269,11 +269,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(10);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(10);
                     done();
                 });
         });
@@ -302,11 +302,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(3);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(3);
                     done();
                 });
         });
@@ -335,11 +335,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(10);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(10);
                     done();
                 });
         });
@@ -368,11 +368,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(2);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(2);
                     done();
                 });
         });
@@ -401,11 +401,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(10);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(10);
                     done();
                 });
         });
@@ -434,11 +434,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(2);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(2);
                     done();
                 });
         });
@@ -467,11 +467,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(1);
                     done();
                 });
         });
@@ -500,11 +500,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(2);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(2);
                     done();
                 });
         });
@@ -533,11 +533,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(1);
                     done();
                 });
         });
@@ -566,11 +566,11 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(10);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(10);
                     done();
                 });
         });
@@ -604,7 +604,7 @@ describe("jsondata connector", function () {
 
         it("sorts by default column", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -624,12 +624,12 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.payload[0][0]).toBe('Abramo');
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.Payload[0][0]).toBe('Abramo');
                     done();
                 }
                 );
@@ -638,7 +638,7 @@ describe("jsondata connector", function () {
         it("sorts by default column and go to page 2", done => {
             const page = 1,
                 take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -658,19 +658,19 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.payload[0][0]).toBe('Clare');
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.Payload[0][0]).toBe('Clare');
                     done();
                 });
         });
 
         it("sorts by specific column", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -690,19 +690,19 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.payload[0][1]).toBe('Allworthy');
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.Payload[0][1]).toBe('Allworthy');
                     done();
                 });
         });
 
         it("sorts by TWO columns", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -722,13 +722,13 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.payload[0][2]).toBe(2);
-                    expect(response.payload[0][1]).toBe('Allworthy');
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.Payload[0][2]).toBe(2);
+                    expect(response.Payload[0][1]).toBe('Allworthy');
                     done();
                 });
         });
@@ -737,7 +737,7 @@ describe("jsondata connector", function () {
     describe("Aggregate", function () {
         it("uses Count", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -757,13 +757,13 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.first_name).toBe(50);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.first_name).toBe(50);
 
                     done();
                 });
@@ -771,7 +771,7 @@ describe("jsondata connector", function () {
 
         it("uses Distinct Count", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -795,13 +795,13 @@ describe("jsondata connector", function () {
             tubular.createGridResponse(request, data)
                 .then(response => {
 
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.is_active).toBe(2);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.is_active).toBe(2);
 
                     done();
                 });
@@ -809,7 +809,7 @@ describe("jsondata connector", function () {
 
         it("uses Max", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -829,13 +829,13 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.address_id).toBe(50);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.address_id).toBe(50);
 
                     done();
                 });
@@ -843,7 +843,7 @@ describe("jsondata connector", function () {
 
         it("uses Min", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -863,13 +863,13 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.address_id).toBe(1);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.address_id).toBe(1);
 
                     done();
                 });
@@ -877,7 +877,7 @@ describe("jsondata connector", function () {
 
         it("uses Average", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -897,13 +897,13 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.address_id).toBe(25.5);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.address_id).toBe(25.5);
 
                     done();
                 });
@@ -911,7 +911,7 @@ describe("jsondata connector", function () {
 
         it("uses Sum", done => {
             const take = 10,
-                filteredCount = totalRecordCount;
+                filteredCount = TotalRecordCount;
 
             let request = new GridRequest(
                 [
@@ -931,13 +931,13 @@ describe("jsondata connector", function () {
 
             tubular.createGridResponse(request, data)
                 .then(response => {
-                    expect(response.counter).toBeDefined();
-                    expect(response.totalRecordCount).toBe(totalRecordCount);
-                    expect(response.filteredRecordCount).toBe(filteredCount);
-                    expect(response.totalPages).toBe(Math.ceil(filteredCount / take));
-                    expect(response.payload.length).toBe(take);
-                    expect(response.aggregationPayload).toBeDefined();
-                    expect(response.aggregationPayload.address_id).toBe(1275);
+                    expect(response.Counter).toBeDefined();
+                    expect(response.TotalRecordCount).toBe(TotalRecordCount);
+                    expect(response.FilteredRecordCount).toBe(filteredCount);
+                    expect(response.TotalPages).toBe(Math.ceil(filteredCount / take));
+                    expect(response.Payload.length).toBe(take);
+                    expect(response.AggregationPayload).toBeDefined();
+                    expect(response.AggregationPayload.address_id).toBe(1275);
 
                     done();
                 });

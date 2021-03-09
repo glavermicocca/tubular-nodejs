@@ -24,7 +24,7 @@ function createGridResponse(request, subset) {
     let promises = [
         subset.clone().clear('select').clear('order').clear('group').clear('where').clear('having')
             .count(`* as tbResult`)
-            .then(result => ({ totalRecordCount: result[0].tbResult }))
+            .then(result => ({ TotalRecordCount: Number(result[0].tbResult) }))
     ];
 
     //subset = applyFreeTextSearch(request, subset);
@@ -33,17 +33,17 @@ function createGridResponse(request, subset) {
 
     promises.push(subset.clone().clear('select').clear('order').clear('group').clear('where').clear('having')
         .count(`* as tbResult`)
-        .then(result => ({ filteredRecordCount: result[0].tbResult })));
+        .then(result => ({ FilteredRecordCount: Number(result[0].tbResult) })));
 
     let subsetForAggregates = subset.clone();
 
     promises.push(getAggregatePayload(request, subsetForAggregates)
-        .then(values => ({ aggregationPayload: _.reduce(values, _.merge, {}) })));
+        .then(values => ({ AggregationPayload: _.reduce(values, _.merge, {}) })));
 
     let response = new GridResponse({
-        counter: request.counter,
-        totalPages: 1,
-        currentPage: 1
+        Counter: request.Counter,
+        TotalPages: 1,
+        CurrentPage: 1
     });
 
     return Promise.all(promises)
@@ -52,10 +52,10 @@ function createGridResponse(request, subset) {
 
             // Take with value -1 represents entire set
             if (request.take > -1) {
-                response.totalPages = Math.ceil(response.filteredRecordCount / request.take);
+                response.TotalPages = Math.ceil(response.FilteredRecordCount / request.take);
 
-                if (response.totalPages > 0) {
-                    response.currentPage = request.skip / request.take + 1;
+                if (response.TotalPages > 0) {
+                    response.CurrentPage = request.skip / request.take + 1;
 
                     if (request.skip > 0) {
                         subset = subset.offset(request.skip);
@@ -68,7 +68,7 @@ function createGridResponse(request, subset) {
             return subset;
         })
         .then(rows => {
-            response.payload = rows.map(row => request.columns.map(c => row[c.name]));
+            response.Payload = rows.map(row => request.columns.map(c => row[c.name]));
 
             return response;
         });
