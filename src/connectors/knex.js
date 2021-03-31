@@ -22,16 +22,16 @@ function getCompareOperators(operator) {
 function createGridResponse(request, subset) {
     
     let promises = [
-        subset.clone().clear('select').clear('order').clear('group').clear('where').clear('having')
+        subset.clone().clear('select').clear('order').clear('having')
             .count(`* as tbResult`)
             .then(result => ({ TotalRecordCount: Number(result[0].tbResult) }))
     ];
 
-    //subset = applyFreeTextSearch(request, subset);
+    subset = applyFreeTextSearch(request, subset);
     subset = applyFiltering(request, subset);
     subset = applySorting(request, subset);
 
-    promises.push(subset.clone().clear('select').clear('order').clear('group').clear('where').clear('having')
+    promises.push(subset.clone().clear('select').clear('order').clear('having') 
         .count(`* as tbResult`)
         .then(result => ({ FilteredRecordCount: Number(result[0].tbResult) })));
 
@@ -68,8 +68,25 @@ function createGridResponse(request, subset) {
             return subset;
         })
         .then(rows => {
-            response.Payload = rows.map(row => request.columns.map(c => row[c.name]));
+            //response.Payload = rows.map(row => request.columns.map(c => row[c.name]));
+            
+            //associa tutti i valori richiesti in definizione colonna p.e. tabella.id joinTabella.id
+            let posDot, arrR, colum
 
+            const arrRows = []
+            for (let index = 0; index < rows.length; index++) {
+                const row = rows[index];
+                arrR = []
+                for (let ii = 0; ii < request.columns.length; ii++) {
+                    colum = request.columns[ii];
+                    posDot = colum.name.lastIndexOf('.')
+                    arrR.push(row[colum.name.substr(posDot+1)])
+                }
+                arrRows.push(arrR)
+            }
+
+            response.Payload = arrRows
+            
             return response;
         });
 }
@@ -97,7 +114,7 @@ function getAggregatePayload(request, subset) {
         let copyOfSubset = subset.clone();
 
         // in order to work with aggregates
-        copyOfSubset.clearSelect();
+        copyOfSubset.clear('select').clear('order').clear('group').clear('where').clear('having')
 
         switch (column.aggregate) {
             case AggregateFunctions.Sum:
@@ -113,7 +130,7 @@ function getAggregatePayload(request, subset) {
                 copyOfSubset = copyOfSubset.min(`${column.name} as tbResult`);
                 break;
             case AggregateFunctions.Count:
-                copyOfSubset = copyOfSubset.count(`${column.name} as tbResult`);
+                copyOfSubset = copyOfSubset.countDistinct(`${column.name} as tbResult`); //postgres
                 break;
             case AggregateFunctions.DistinctCount:
                 copyOfSubset = copyOfSubset.countDistinct(`${column.name} as tbResult`);
@@ -128,7 +145,7 @@ function getAggregatePayload(request, subset) {
 
 function applyFreeTextSearch(request, subset) {
     // Free text-search 
-    if (request.search && request.search.operator == CompareOperators.Auto) {
+    if (request.searchText) { // && request.search.operator == CompareOperators.Auto
         let searchableColumns = _.filter(request.columns, 'searchable');
 
         if (searchableColumns.length > 0) {
@@ -137,11 +154,11 @@ function applyFreeTextSearch(request, subset) {
                 let _subset = this;
                 searchableColumns.forEach(column => {
                     if (isFirst) {
-                        _subset.where(column.name, 'LIKE', '%' + request.search.text + '%');
+                        _subset.where(column.name, 'LIKE', '%' + request.searchText + '%');
                         isFirst = false;
                     }
                     else
-                        _subset.orWhere(column.name, 'LIKE', '%' + request.search.text + '%');
+                        _subset.orWhere(column.name, 'LIKE', '%' + request.searchText + '%');
                 });
             })
         }
