@@ -24,7 +24,7 @@ function createGridResponse(request, subset) {
     let promises = [
         subset.clone().clear('select').clear('order').clear('having')
             .count(`* as tbResult`)
-            .then(result => ({ TotalRecordCount: Number(result[0].tbResult) }))
+            .then(result => ({ TotalRecordCount: result.length > 0 ? Number(result[0].tbResult): 0 }))
     ];
 
     subset = applyFreeTextSearch(request, subset);
@@ -33,7 +33,7 @@ function createGridResponse(request, subset) {
 
     promises.push(subset.clone().clear('select').clear('order').clear('having') 
         .count(`* as tbResult`)
-        .then(result => ({ FilteredRecordCount: Number(result[0].tbResult) })));
+        .then(result => ({ FilteredRecordCount: result.length > 0 ? Number(result[0].tbResult): 0 })));
 
     let subsetForAggregates = subset.clone();
 
